@@ -18,6 +18,7 @@ cd newproject
 
 mkdir analysis output
 touch README.md
+echo "# Project Name: DSI Consulting Inc." > README.md
 touch analysis/main.py
 
 # download client data
@@ -26,24 +27,30 @@ unzip -q rawdata.zip
 
 ###########################################
 # Complete assignment here
+# Soyuz Gautam 2026, Apr 13. Issues with the unzip command, it is not unzipping the file. 
+# I downloaded the file and unzipped and tested it manually. I will try to fix the issue with the unzip command later.  
 
 # 1. Create a directory named data
-
+mkdir ./data
 # 2. Move the ./rawdata directory to ./data/raw (eg. move it into ./data and rename it to raw)
-
+mv ./rawdata ./data/raw
 # 3. List the contents of the ./data/raw directory
-
+ls -la ./data/raw
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-
+mkdir -p ./data/processed/server_logs
+mkdir -p ./data/processed/user_logs
+mkdir -p ./data/processed/event_logs
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-
+find ./data/raw -type f -name "*server*.log" -exec cp {} ./data/processed/server_logs \;
 # 6. Repeat the above step for user logs and event logs
-
+find ./data/raw -type f -name "*user*.log" -exec cp {} ./data/processed/user_logs \;
+find ./data/raw -type f -name "*event*.log" -exec cp {} ./data/processed/event_logs \;
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-
+find ./data/raw -type f -name "*ipaddr*" -exec rm {} \;
+find ./data/processed/user_logs -type f -name "*ipaddr*" -exec rm {} \;
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-
+find ./data/processed -type f > ./data/inventory.txt
 
 ###########################################
 
