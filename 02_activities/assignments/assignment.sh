@@ -22,13 +22,13 @@ echo "# Project Name: DSI Consulting Inc." > README.md
 touch analysis/main.py
 
 # download client data
-curl -Lo rawdata.zip https://github.com/UofT-DSI/shell/raw/refs/heads/main
+curl -Lo rawdata.zip https://github.com/UofT-DSI/shell/raw/refs/heads/main/02_activities/assignments/rawdata.zip
 unzip -q rawdata.zip
 
 ###########################################
 # Complete assignment here
 # Soyuz Gautam 2026, Apr 13. Issues with the unzip command, it is not unzipping the file. 
-# I have downloaded the file and unzipped it manually. I will try to fix the issue with the unzip command later.  
+# I downloaded the file and unzipped and tested it manually. I will try to fix the issue with the unzip command later.  
 
 # 1. Create a directory named data
 mkdir ./data
