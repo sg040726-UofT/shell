@@ -35,9 +35,11 @@ mv ./rawdata ./data/raw
 ls -la ./data/raw
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-
+mkdir -p ./data/processed/server_logs
+mkdir -p ./data/processed/user_logs
+mkdir -p ./data/processed/event_logs
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-
+find ./data/raw -type f -name "*server*.log" -exec cp {} ./data/processed/server_logs \;
 # 6. Repeat the above step for user logs and event logs
 find ./data/raw -type f -name "*user*.log" -exec cp {} ./data/processed/user_logs \;
 find ./data/raw -type f -name "*event*.log" -exec cp {} ./data/processed/event_logs \;
