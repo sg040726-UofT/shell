@@ -27,6 +27,8 @@ unzip -q rawdata.zip
 
 ###########################################
 # Complete assignment here
+# Soyuz Gautam 2026, Apr 13. Issues with the unzip command, it is not unzipping the file. 
+# I have downloaded the file and unzipped it manually. I will try to fix the issue with the unzip command later.  
 
 # 1. Create a directory named data
 mkdir ./data
